@@ -1,0 +1,41 @@
+* {
+	margin:0;
+	padding:0;
+}
+dl {
+	padding-left:5em;
+}
+dt,dd {
+	float:left;
+	padding-bottom:6px;
+}
+dt {
+	line-height:31px;
+	float:left;
+	clear:left;
+	margin-left:-5em;
+	margin-right:0;
+}
+dd a {
+	white-space:nowrap;
+	overflow:hidden;
+	display:block;
+	padding:0 2px;
+	width:79px;
+	line-height:29px;
+	text-align:center;
+	color:#404040;
+	border:1px solid #E6E6E6;
+	margin-right:-1px;
+	background:white;
+	zoom:1;
+	position:relative;
+	z-index:2;
+}
+dd a:hover,dd.selected a {
+	text-decoration:none;
+	position:relative;
+	border-color:#FF8040;
+	-webkit-transition:border-color .3s;
+	z-index:100;
+}

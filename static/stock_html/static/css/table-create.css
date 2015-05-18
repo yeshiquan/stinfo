@@ -1,0 +1,23 @@
+form .error-input {
+    border: 1px solid red;
+}
+
+.table-basic-info input, #partition, .column-inputs input, form select{
+    color:blue;
+}
+
+//修复firefox下placeholder显示不正常的问题
+.table-basic-info input:-moz-placeholder { color: #999; }
+#partition:-moz-placeholder { color: #999; }
+.column-inputs input:-moz-placeholder { color: #999; }
+
+.page-header {
+  color: #111;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EAEAEA;
+  font: 14px Arial,Helvetica,sans-serif;
+  margin-bottom: 20px 0 12px 0;
+  line-height: 150%;
+  font-weight:bold;
+}
+

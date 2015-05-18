@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div id="page-container" class="page-container">
+    <div id="menu" class="menu">
+        <div class="menu-warp">
+            <div class="" style="margin-top:0px;">
+                <div class="tag-hd">Stock List</div>
+            </div>
+            <div class="nav-menu">
+				{% for stock in data.stocks %}
+				    {% if stock.name == data.symbol %}
+                                    <a href="/?symbol={{stock.name}}" class="actived">{{stock.name}}<span class="triangle"></span></a>
+				    {% else %}
+                                    <a href="/?symbol={{stock.name}}">{{stock.name}}<span class="triangle"></span></a>
+				    {% endif %}
+				{% endfor %}
+                            </div>
+        </div>
+    </div>
+
+    <div id="center" class="center-warp">
+		<div class="overview-info">
+			<h4 style="padding-bottom:10px">
+				<span style="color:blue;">{{data.stock.name}}</span> 
+				{% if data.stock.change > 0 %}
+				<span style="color:green;">${{data.stock.price}} ({{'%0.2f'| format((data.stock.change*100)|float)}}%)</span>
+				{% else %}
+				<span style="color:red;">${{data.stock.price}} ({{'%0.2f'| format((data.stock.change*100)|float)}}%)</span>
+				{% endif %}
+			</h4>
+			<ul class="info-list"> 
+				<li>52 high: <span style="font-weight:bold;color:blue;">{{data.stock.fifty_two_week_high}}</span></li>
+				<li>52 low: {{data.stock.fifty_two_week_low}}</li>
+				<li>fall most: <span style="color:red;">{{'%0.2f'| format((-data.stock.high_change*100)|float)}}%</span></li>
+				<li>market cap: {{data.stock.market_cap}}</li>
+				<li>PE: {{data.stock.price_earnings_ratio}}</li>
+			</ul>
+		</div>
+			<table class="table" style="width:80%;">
+				<tr>
+					<td>#</td>
+					<td>Date</td>
+					<td>Price</td>
+					<td>Up</td>
+					<td>Down</td>
+					<td style="text-align:right;">Volumn</td>
+				</tr>
+				{% for price in data.prices %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{price.create_date}}</td>
+					<td>{{price.close_price}}</td>
+					{% if price.change_up > 0 %}
+					  <td style="color:green;">{{'%0.2f'| format((price.change_up*100)|float)}}%</td>
+					  <td></td>
+					{% endif %}
+					{% if price.change_down < 0 %}
+					  <td></td>
+					  <td style="color:red;">{{'%0.2f'| format((price.change_down*100)|float)}}%</td>
+					{% endif %}
+					{% if price.change_down == 0.0000 and price.change_up == 0.0000 %}
+					  <td></td>
+					  <td></td>
+					{% endif %}
+					<td style="text-align:right;">{{'%0.1f'|format(price.volumn/10000)}}W</td>
+				</tr>
+				{% endfor %}
+			</table>
+    </div>
+</div>
+{% endblock %}

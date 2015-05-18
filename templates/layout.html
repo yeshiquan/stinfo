@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <title>Stock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Stock"/>
+    <meta name="author" content="ahoekie"/>
+
+    <link href="/static/css/bootstrap.css" rel="stylesheet" id="main-theme-script"/>
+    <link href="/static/css/default.css" rel="stylesheet" id="theme-specific-script"/>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jcanvas.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script charset="gbk" src="static/js/default.js"></script>
+  </head>
+ <body id="comments" youdao="bind">
+<div class="header">
+        <div class="inner clearfix">
+            <a href="/" class="header-logo"></a>
+            <ul class="header-tool clearfix">
+                <li>
+                    <a href="/" class="actived">Price</a>
+                </li>                        
+                
+            </ul>
+        </div>
+        <div class="header-user">
+            <span>yeshiquan</span>
+            <span style="display:none;" id="user-role">admin</span>
+            <a href="/common/index/logout">注销</a>
+        </div>
+</div>
+
+<div class="notice-bar hide"></div>
+
+{% block body %}{% endblock %}
+</body>
+</html>
