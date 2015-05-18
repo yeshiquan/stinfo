@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding: utf-8
+
 import peewee as pw
 
 stock_db = pw.MySQLDatabase("stock",

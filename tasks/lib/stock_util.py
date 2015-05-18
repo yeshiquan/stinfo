@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding: utf-8
+
 import ystockquote
 from datetime import *
 from models import Stock, Price

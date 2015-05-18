@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding: utf-8
+
 from lib.models import Stock, Price
 from lib.stock_util import get_stock
 from multiprocessing import Process
