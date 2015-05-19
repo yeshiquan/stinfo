@@ -24,6 +24,9 @@ def add():
     get_stock(symbol)
     return 'success'
 
+@app.route("/hello")
+def hello():
+    return 'Hello,World'
 
 @app.route("/delete")
 def delete():
