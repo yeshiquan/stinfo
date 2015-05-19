@@ -10,12 +10,12 @@
             <div class="nav-menu">
 				{% for stock in data.stocks %}
 				    {% if stock.name == data.symbol %}
-                                    <a href="/?symbol={{stock.name}}" class="actived">{{stock.name}}<span class="triangle"></span></a>
+                        <a href="/?symbol={{stock.name}}" class="actived">{{stock.name}}<span class="triangle"></span></a>
 				    {% else %}
-                                    <a href="/?symbol={{stock.name}}">{{stock.name}}<span class="triangle"></span></a>
+                        <a href="/?symbol={{stock.name}}">{{stock.name}}<span class="triangle"></span></a>
 				    {% endif %}
 				{% endfor %}
-                            </div>
+            </div>
         </div>
     </div>
 
@@ -24,9 +24,9 @@
 			<h4 style="padding-bottom:10px">
 				<span style="color:blue;">{{data.stock.name}}</span> 
 				{% if data.stock.change > 0 %}
-				<span style="color:green;">${{data.stock.price}} ({{'%0.2f'| format((data.stock.change*100)|float)}}%)</span>
+                    <span style="color:green;">${{data.stock.price}} ({{'%0.2f'| format((data.stock.change*100)|float)}}%)</span>
 				{% else %}
-				<span style="color:red;">${{data.stock.price}} ({{'%0.2f'| format((data.stock.change*100)|float)}}%)</span>
+                    <span style="color:red;">${{data.stock.price}} ({{'%0.2f'| format((data.stock.change*100)|float)}}%)</span>
 				{% endif %}
 			</h4>
 			<ul class="info-list"> 
